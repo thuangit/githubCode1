@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+}
+.toast{
+   display: flex;
+   align-items: center;
+   background-color: #fff;
+   border-radius: 2px;
+   border-left: 4px solid;
+   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+   padding: 20px 0;
+   min-width: 400px;
+   max-width: 450px;
+   transition: all linear 0.3s ease;
+}
+@keyframes slide{
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 20px));
+    }to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut{
+    to{
+        opacity: 0;
+    }
+}
+.toast + .toast{
+    margin-top: 24px;
+}
+.toast__icon{
+    font-size:24px ;
+}
+.toast__close,
+.toast__icon{
+ padding: 0 16px;
+}
+.toast__body{
+  flex-grow: 1;
+}
+.toast__title{
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+.toast__msg{
+    font-size: 13px;
+    color: #888;
+    margin-top: 3px;
+    line-height: 1.4;
+}
+.toast__close{
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.toast__close:hover{
+    color: rgba(0, 0, 0, 0.7);
+}
+/*js*/
+.toast--success{
+    border-color: rgb(39, 39, 251);
+}
+.toast--success .toast__icon{
+    color: rgb(39, 39, 251);
+}
+.toast--warning{
+    border-color:rgb(255, 234, 0) ;
+}
+.toast--warning .toast__icon{
+    color: rgb(255, 225, 0);
+}
+.toast--error{
+    border-color:tomato ;
+}
+.toast--error .toast__icon{
+  color: tomato;
+}
+#toast{
+    position: fixed;
+    top: -10%;
+    right: 20px;
+}
+/*btn*/
+.btn{
+    min-width: 180px;
+    height: 50px;
+    border-radius: 24px;
+    cursor: pointer;
+    border: none;
+    box-shadow:1px 2px 7px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
+}
+.btn--success:hover{
+    background-color: blue;
+    box-shadow: none;
+  }
+ .btn--error:hover{
+  background-color: red;
+  box-shadow: none;
+}
+ .btn--success{
+   background-color: rgb(66, 66, 255);
+   color: #fff;
+   transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.btn--error{
+    color: #fff;
+    background-color: tomato;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
